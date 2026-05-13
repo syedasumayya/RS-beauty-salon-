@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from "@/src/context/AuthContext";
 import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { FiMenu, FiX, FiUser, FiLogOut } from "react-icons/fi";
 

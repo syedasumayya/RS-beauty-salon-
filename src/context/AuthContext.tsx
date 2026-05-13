@@ -17,7 +17,7 @@ import {
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
-import { auth, db } from "@/lib/firebase";
+import { auth, db } from "@/src/lib/firebase";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
 interface AuthContextType {
@@ -39,12 +39,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
 
-  // Listen for auth state changes (login/logout)
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setUser(user);
       if (user) {
-        // Check if user has admin custom claim
         const tokenResult = await user.getIdTokenResult();
         setIsAdmin(!!tokenResult.claims.admin);
       } else {
@@ -66,8 +64,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   ) => {
     const result = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(result.user, { displayName: name });
-
-    // Save user info to Firestore
     await setDoc(doc(db, "users", result.user.uid), {
       name,
       email,
@@ -79,8 +75,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const loginWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider);
-
-    // Create user doc if it doesn't exist yet
     const userDoc = await getDoc(doc(db, "users", result.user.uid));
     if (!userDoc.exists()) {
       await setDoc(doc(db, "users", result.user.uid), {

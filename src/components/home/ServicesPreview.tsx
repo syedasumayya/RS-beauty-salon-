@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { collection, getDocs, query, where, limit } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+import { db } from "@/src/lib/firebase";
 import { Service, CATEGORY_ICONS, CATEGORY_LABELS } from "@/types";
 import { formatPrice, formatDuration } from "@/lib/utils";
 import { FiArrowRight } from "react-icons/fi";

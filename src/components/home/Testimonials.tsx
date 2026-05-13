@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+import { db } from "@/src/lib/firebase";
 import { Testimonial } from "@/types";
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
 import { motion } from "framer-motion";
