@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,55 +9,43 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply font-body text-salon-charcoal bg-white antialiased;
+    @apply bg-[#FFFDF9] text-[#4A4A4A] font-body antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    @apply font-heading text-[#2D2D2D];
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-500 text-white px-6 py-3 rounded-full font-medium
-           hover:bg-primary-600 transition-all duration-300
-           shadow-lg hover:shadow-xl hover:-translate-y-0.5
-           disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-  .btn-outline {
-    @apply border-2 border-primary-500 text-primary-500 px-6 py-3 rounded-full
-           font-medium hover:bg-primary-500 hover:text-white
-           transition-all duration-300;
+    @apply bg-[#D4A5A5] text-white px-8 py-3 rounded-full font-medium tracking-wide
+           hover:bg-[#C68E8E] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5;
   }
   .btn-gold {
-    @apply bg-gold-500 text-white px-6 py-3 rounded-full font-medium
-           hover:bg-gold-600 transition-all duration-300 shadow-lg;
+    @apply bg-gradient-to-r from-[#D4AF37] to-[#F3E5AB] text-[#4A4A4A] px-8 py-3 rounded-full font-semibold tracking-wide
+           hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply border-2 border-[#D4A5A5] text-[#D4A5A5] px-8 py-3 rounded-full font-medium
+           hover:bg-[#D4A5A5] hover:text-white transition-all duration-300;
   }
   .section-padding {
-    @apply py-16 md:py-24 px-4 md:px-8;
-  }
-  .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-salon-dark;
-  }
-  .section-subtitle {
-    @apply text-lg text-gray-500 mt-4 max-w-2xl;
+    @apply py-20 md:py-28 px-4 md:px-8;
   }
   .glass-card {
-    @apply bg-white/80 backdrop-blur-md border border-white/20
-           rounded-2xl shadow-lg;
+    @apply bg-white/80 backdrop-blur-md border border-white/60 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)];
   }
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-200 rounded-lg
-           focus:outline-none focus:ring-2 focus:ring-primary-500/50
-           focus:border-primary-500 transition-all duration-200;
+    @apply w-full px-4 py-3 bg-[#FFFDF9] border border-[#EADDD3] rounded-xl
+           focus:outline-none focus:ring-2 focus:ring-[#D4A5A5] focus:border-transparent transition-all duration-200;
   }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary-500 to-gold-500
-           bg-clip-text text-transparent;
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-[#D4AF37] to-[#B8860B] bg-clip-text text-transparent;
   }
-  .bg-gradient-salon {
-    @apply bg-gradient-to-br from-primary-50 via-white to-gold-50;
+  .text-gradient-blush {
+    @apply bg-gradient-to-r from-[#D4A5A5] to-[#E6C4C4] bg-clip-text text-transparent;
   }
 }

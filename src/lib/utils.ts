@@ -5,15 +5,6 @@ export function formatPrice(price: number): string {
   }).format(price);
 }
 
-export function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
-
 export function formatDuration(minutes: number): string {
   if (minutes < 60) return `${minutes} min`;
   const hours = Math.floor(minutes / 60);
