@@ -1,10 +1,17 @@
 import Hero from "@/components/home/Hero";
+import ServicesPreview from "@/components/home/ServicesPreview";
+import AboutPreview from "@/components/home/AboutPreview";
+import Testimonials from "@/components/home/Testimonials";
+import CTASection from "@/components/home/CTASection";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      {/* We will add Services, About, Gallery, etc. right after this */}
+      <ServicesPreview />
+      <AboutPreview />
+      <Testimonials />
+      <CTASection />
     </>
   );
 }
